@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Uriel Barrios · Analista de Sistemas</title>
+<meta name="description" content="Uriel Barrios — Analista de Sistemas. Análisis funcional, implementación y soporte de aplicaciones. Formación en ciberseguridad.">
+<meta name="author" content="Uriel Ivan Barrios">
+<style>
+  :root{
+    --bg:#0d1117; --bg-2:#131a23; --line:#232d3b; --text:#e6edf3; --muted:#8b98a8;
+    --accent:#5eead4; --accent-2:#7dd3fc; --warn:#fbbf24;
+    --mono: ui-monospace, "SFMono-Regular", "JetBrains Mono", Menlo, Consolas, monospace;
+    --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --r:10px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 var(--sans);-webkit-font-smoothing:antialiased}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .wrap{max-width:960px;margin:0 auto;padding:0 24px}
+
+  /* nav */
+  header.nav{position:sticky;top:0;z-index:10;background:rgba(13,17,23,.85);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  header.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:56px}
+  .logo{font-family:var(--mono);font-size:14px;color:var(--text)}
+  .logo span{color:var(--accent)}
+  nav a{font-family:var(--mono);font-size:13px;color:var(--muted);margin-left:20px}
+  nav a:hover{color:var(--text);text-decoration:none}
+
+  /* hero */
+  .hero{padding:96px 0 72px}
+  .prompt{font-family:var(--mono);font-size:13px;color:var(--muted);margin-bottom:18px}
+  .prompt b{color:var(--accent);font-weight:500}
+  h1{font-size:clamp(36px,6vw,56px);line-height:1.05;margin:0 0 14px;letter-spacing:-.02em}
+  .role{font-size:clamp(17px,2.4vw,21px);color:var(--text);margin:0 0 8px}
+  .sub{color:var(--muted);margin:0 0 32px;max-width:640px}
+  .cta{display:flex;flex-wrap:wrap;gap:12px}
+  .btn{font-family:var(--mono);font-size:13px;padding:10px 16px;border-radius:8px;border:1px solid var(--line);color:var(--text);background:var(--bg-2)}
+  .btn:hover{border-color:var(--accent);text-decoration:none}
+  .btn.primary{background:var(--accent);color:#04201c;border-color:var(--accent);font-weight:600}
+
+  /* sections */
+  section{padding:64px 0;border-top:1px solid var(--line)}
+  .sec-title{font-family:var(--mono);font-size:13px;color:var(--accent);letter-spacing:.08em;text-transform:uppercase;margin:0 0 8px}
+  h2{font-size:28px;margin:0 0 28px;letter-spacing:-.01em}
+  p{margin:0 0 14px}
+  .muted{color:var(--muted)}
+
+  /* cases */
+  .case{background:var(--bg-2);border:1px solid var(--line);border-radius:var(--r);padding:28px;margin-bottom:20px}
+  .case-head{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;align-items:baseline;margin-bottom:6px}
+  .case h3{margin:0;font-size:20px}
+  .tag{font-family:var(--mono);font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:2px 10px}
+  .tag.live{color:var(--accent);border-color:rgba(94,234,212,.4)}
+  .tag.soon{color:var(--warn);border-color:rgba(251,191,36,.4)}
+  .case .lead{color:var(--muted);margin-bottom:18px}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  .case h4{font-family:var(--mono);font-size:12px;color:var(--accent-2);text-transform:uppercase;letter-spacing:.06em;margin:0 0 6px;font-weight:500}
+  .case ul{margin:0;padding-left:18px}
+  .case li{margin-bottom:4px}
+  .stack{display:flex;flex-wrap:wrap;gap:6px;margin:18px 0 0}
+  .chip{font-family:var(--mono);font-size:12px;background:#0b2a2a;color:var(--accent);padding:3px 9px;border-radius:6px}
+  .ai-note{margin-top:18px;padding:14px 16px;border-left:3px solid var(--accent-2);background:rgba(125,211,252,.06);border-radius:0 8px 8px 0;font-size:15px}
+  .links{margin-top:18px;display:flex;flex-wrap:wrap;gap:16px;font-family:var(--mono);font-size:13px}
+
+  /* timeline */
+  .tl{list-style:none;margin:0;padding:0}
+  .tl li{display:grid;grid-template-columns:150px 1fr;gap:20px;padding:16px 0;border-bottom:1px dashed var(--line)}
+  .tl li:last-child{border-bottom:0}
+  .tl .when{font-family:var(--mono);font-size:13px;color:var(--muted)}
+  .tl h3{font-size:17px;margin:0 0 4px}
+  .tl .org{color:var(--accent-2)}
+
+  /* edu */
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+  .card{background:var(--bg-2);border:1px solid var(--line);border-radius:var(--r);padding:20px}
+  .card h3{font-size:16px;margin:0 0 4px}
+  .card .meta{font-family:var(--mono);font-size:12px;color:var(--muted);margin-bottom:8px}
+  .card p{font-size:15px;color:var(--muted);margin:0}
+  .subhead{font-family:var(--mono);font-size:13px;color:var(--muted);margin:36px 0 14px}
+
+  /* skills */
+  .skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:24px}
+  .skills h3{font-family:var(--mono);font-size:13px;color:var(--accent-2);font-weight:500;margin:0 0 8px}
+  .skills ul{list-style:none;margin:0;padding:0;color:var(--muted);font-size:15px}
+  .skills li{padding:2px 0}
+
+  /* contact */
+  .contact a{font-family:var(--mono)}
+  footer{border-top:1px solid var(--line);padding:24px 0 40px;font-family:var(--mono);font-size:12px;color:var(--muted)}
+
+  @media (max-width:700px){
+    nav{display:none}
+    .grid2{grid-template-columns:1fr}
+    .tl li{grid-template-columns:1fr;gap:4px}
+    .hero{padding:64px 0 48px}
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="logo" href="#top">uriel<span>@</span>barrios:~$</a>
+    <nav>
+      <a href="#proyectos">proyectos</a>
+      <a href="#experiencia">experiencia</a>
+      <a href="#formacion">formación</a>
+      <a href="#contacto">contacto</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="wrap hero">
+    <div class="prompt"><b>$</b> whoami</div>
+    <h1>Uriel Barrios</h1>
+    <p class="role">Analista de Sistemas · Análisis funcional, implementación y soporte de aplicaciones</p>
+    <p class="sub">Relevo procesos, los traduzco en requerimientos claros y acompaño a los usuarios hasta que el sistema funciona en su día a día. Formación en ciberseguridad (Lic. en Ciberdefensa, Cisco NetAcad, TryHackMe).</p>
+    <div class="cta">
+      <a class="btn primary" href="#proyectos">Ver proyectos</a>
+      <a class="btn" href="CV-Uriel-Barrios.pdf" download>Descargar CV</a>
+      <a class="btn" href="https://github.com/UrielIvanBarrios" rel="noopener">GitHub</a>
+      <a class="btn" href="https://www.linkedin.com/in/urielivanbarrios" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+
+  <!-- SOBRE MÍ -->
+  <section id="sobre">
+    <div class="wrap">
+      <p class="sec-title">// sobre mí</p>
+      <h2>Entre el negocio y el sistema</h2>
+      <p>Trabajé del lado del usuario y del lado del software. Antes de dedicarme a sistemas pasé cuatro años en la administración de una obra social: armaba y revisaba expedientes, atendía a afiliados y prestadores. Eso me dejó algo que hoy uso todos los días: entender cómo trabaja realmente la gente antes de proponer una solución.</p>
+      <p>Después hice análisis funcional y testing en un ERP para el sector agropecuario, soporte técnico, y relevé y mejoré los procesos administrativos de un club de barrio. Me falta poco para recibirme de Analista de Sistemas (ORT) y en paralelo curso la Licenciatura en Ciberdefensa (FADENA).</p>
+    </div>
+  </section>
+
+  <!-- PROYECTOS -->
+  <section id="proyectos">
+    <div class="wrap">
+      <p class="sec-title">// proyectos y casos</p>
+      <h2>Lo que hice y cómo lo pensé</h2>
+
+      <!-- CASO 1 -->
+      <article class="case">
+        <div class="case-head">
+          <h3>Sistema de gestión para un club de barrio</h3>
+          <span class="tag soon">demo · próximamente</span>
+        </div>
+        <p class="lead">Trabajo práctico final de Analista de Sistemas (ORT), basado en el proceso real de Club Imperio Juniors.</p>
+        <div class="grid2">
+          <div>
+            <h4>Problema</h4>
+            <p>Socios, actividades, asistencias y cobranzas se manejaban en planillas de Excel separadas: datos duplicados, cupos controlados a mano, sin historial de asistencia confiable.</p>
+          </div>
+          <div>
+            <h4>Qué construí</h4>
+            <ul>
+              <li>Socios y membresías, actividades y comisiones con cupo</li>
+              <li>Inscripciones, asistencia por clase y clases de prueba para no socios</li>
+              <li>Importación masiva de socios desde Excel/CSV con validación fila por fila</li>
+              <li>Dashboard, login y roles (ADMIN / USER)</li>
+            </ul>
+          </div>
+        </div>
+        <div class="stack">
+          <span class="chip">Java</span><span class="chip">Spring Boot</span><span class="chip">Spring Security · JWT</span>
+          <span class="chip">JPA / Hibernate</span><span class="chip">PostgreSQL</span><span class="chip">Swagger</span>
+          <span class="chip">React + TypeScript</span><span class="chip">Vite</span><span class="chip">MUI</span><span class="chip">TanStack Query</span>
+          <span class="chip">Tests E2E · 330+ verificaciones</span>
+        </div>
+        <div class="ai-note">
+          <strong>Cómo usé IA.</strong> El relevamiento, el modelo de datos, las reglas de negocio y la primera parte del backend los hice yo. Para completar el backend (incluida la autenticación) y para el frontend trabajé con IA. Mi rol fue definir qué construir, revisar el código capa por capa (controller, service, repository) y validar el comportamiento con la suite de pruebas.
+        </div>
+        <div class="links">
+          <a href="https://club.urielivanbarrios.dev" rel="noopener">→ demo (datos ficticios)</a>
+          <a href="https://github.com/UrielIvanBarrios/club-imperio-backend" rel="noopener">→ repo backend</a>
+        </div>
+      </article>
+
+      <!-- CASO: TRACKER -->
+      <article class="case">
+        <div class="case-head">
+          <h3>Tracker de postulaciones laborales</h3>
+          <span class="tag soon">en desarrollo</span>
+        </div>
+        <p class="lead">Proyecto propio. Reemplaza el Excel con el que sigo mi búsqueda laboral (más de 40 postulaciones reales). Lo programo yo, sin que la IA genere el código.</p>
+        <div class="grid2">
+          <div>
+            <h4>Problema</h4>
+            <p>En la planilla, empresas, consultoras y contactos se repetían como texto suelto en cada fila. No había historial de mensajes, entrevistas ni seguimientos, y tampoco métricas para saber qué funcionaba.</p>
+          </div>
+          <div>
+            <h4>Enfoque</h4>
+            <ul>
+              <li>Relevamiento del uso real de la planilla y de sus límites</li>
+              <li>Modelo normalizado: Empresa, Consultora, Contacto, Vacante, Postulación, Interacción, Versión de CV</li>
+              <li>MVP: importador del Excel, filtros, alta y edición, dashboard con 4 indicadores</li>
+              <li>Instancia privada para mis datos y demo pública con datos ficticios y reset diario</li>
+            </ul>
+          </div>
+        </div>
+        <div class="stack">
+          <span class="chip">Java</span><span class="chip">Spring Boot</span><span class="chip">React</span><span class="chip">Base relacional</span>
+        </div>
+        <!-- Cuando exista: link al relevamiento del MVP, al repo y a tracker.DOMINIO -->
+      </article>
+
+      <!-- CASO 2 -->
+      <article class="case">
+        <div class="case-head">
+          <h3>Ordenar la administración de un club con lo que ya usaban</h3>
+          <span class="tag">caso · análisis funcional</span>
+        </div>
+        <p class="lead">Club Imperio Juniors · Administrativo y mejora de procesos (2024–2025)</p>
+        <div class="grid2">
+          <div>
+            <h4>Situación</h4>
+            <p>Las secretarias llevaban socios, actividades y pagos en planillas sueltas. Cada consulta implicaba buscar en varios archivos.</p>
+          </div>
+          <div>
+            <h4>Qué hice</h4>
+            <ul>
+              <li>Relevé el circuito administrativo completo con quienes lo hacían a diario</li>
+              <li>Diseñé planillas Excel vinculadas entre sí, sin cambiar de herramienta</li>
+              <li>Les expliqué a las secretarias cómo usarlas en su trabajo diario</li>
+            </ul>
+          </div>
+        </div>
+        <p class="muted" style="margin-top:16px">Ese relevamiento fue la base del sistema de gestión de arriba.</p>
+      </article>
+
+      <!-- CASO 3 -->
+      <article class="case">
+        <div class="case-head">
+          <h3>Implementación de un ERP para el sector agropecuario</h3>
+          <span class="tag">caso · sin código ni capturas</span>
+        </div>
+        <p class="lead">Mantis · Trainee analista funcional (2026). Software propiedad de la empresa: se describe el trabajo, no el producto.</p>
+        <div class="grid2">
+          <div>
+            <h4>Contexto</h4>
+            <p>Clientes de ganadería, acopio, frigoríficos y consignatarios de hacienda, con circuitos de pedidos, cuenta corriente, facturación y consignación.</p>
+          </div>
+          <div>
+            <h4>Qué hice</h4>
+            <ul>
+              <li>Relevamiento de procesos y elaboración de instructivos</li>
+              <li>Testing funcional en versiones desktop y web</li>
+              <li>Coordinación con desarrolladores y contacto con clientes</li>
+              <li>Documentación funcional de integraciones por API</li>
+              <li>Instalaciones remotas y troubleshooting de SQL Server / IIS</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- EXPERIENCIA -->
+  <section id="experiencia">
+    <div class="wrap">
+      <p class="sec-title">// experiencia</p>
+      <h2>Trayectoria</h2>
+      <ul class="tl">
+        <li>
+          <div class="when">abr – jun 2026</div>
+          <div><h3>Trainee Analista Funcional · <span class="org">Mantis</span></h3>
+          <p class="muted">ERP agropecuario. Relevamiento, instructivos, testing funcional, integración de APIs, soporte de implementación.</p></div>
+        </li>
+        <li>
+          <div class="when">oct 2025 – abr 2026</div>
+          <div><h3>Soporte Técnico Nivel 1 · <span class="org">Cat Technologies</span></h3>
+          <p class="muted">Diagnóstico y resolución de incidentes de usuarios.</p></div>
+        </li>
+        <li>
+          <div class="when">feb 2024 – oct 2025</div>
+          <div><h3>Administrativo y mejora de procesos · <span class="org">Club Imperio Juniors</span></h3>
+          <p class="muted">Relevamiento de procesos administrativos, planillas vinculadas y acompañamiento a usuarias.</p></div>
+        </li>
+        <li>
+          <div class="when">feb 2015 – ago 2019</div>
+          <div><h3>Administrativo · <span class="org">OSPIP</span></h3>
+          <p class="muted">Área de Discapacidad: autorizaciones, armado y verificación de expedientes para auditoría médica, revisión de presupuestos, atención a afiliados y prestadores.</p></div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- FORMACIÓN -->
+  <section id="formacion">
+    <div class="wrap">
+      <p class="sec-title">// formación</p>
+      <h2>Formación</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Analista de Sistemas</h3>
+          <div class="meta">ORT Argentina · 90% aprobado</div>
+          <p>Análisis y diseño de sistemas, desarrollo, bases de datos, gestión de proyectos.</p>
+        </div>
+        <div class="card">
+          <h3>Fundamentos de Data Analytics</h3>
+          <div class="meta">Guayerd / IBM · 2024</div>
+          <p>Limpieza, análisis y visualización de datos.</p>
+        </div>
+      </div>
+
+      <p class="subhead">// ciberseguridad</p>
+      <div class="cards">
+        <div class="card">
+          <h3>Lic. en Ciberdefensa</h3>
+          <div class="meta">FADENA · en curso desde 2026</div>
+          <p>Facultad de la Defensa Nacional.</p>
+        </div>
+        <div class="card">
+          <h3>CCNA Cybersecurity</h3>
+          <div class="meta">Cisco NetAcad · beca Edutek 2026</div>
+          <p>Career path Analista Junior en Ciberseguridad.</p>
+        </div>
+        <div class="card">
+          <h3>TryHackMe · SOC Level 1</h3>
+          <div class="meta">en curso · writeups en inglés</div>
+          <p><a href="https://github.com/UrielIvanBarrios/soc-writeups" rel="noopener">github.com/UrielIvanBarrios/soc-writeups</a></p>
+        </div>
+        <div class="card">
+          <h3>Labs propios</h3>
+          <div class="meta">próximamente</div>
+          <p>Laboratorio de Active Directory: armado, configuración y writeup.</p>
+        </div>
+        <div class="card">
+          <h3>Comunidad</h3>
+          <div class="meta">2026</div>
+          <p>Cyber.ar (congreso de ciberdefensa) · Ekoparty: voluntario en Blue Space.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HERRAMIENTAS -->
+  <section id="herramientas">
+    <div class="wrap">
+      <p class="sec-title">// herramientas</p>
+      <h2>Con qué trabajo</h2>
+      <div class="skills">
+        <div><h3>Análisis e implementación</h3><ul><li>Relevamiento de procesos</li><li>Requerimientos y reglas de negocio</li><li>Instructivos y documentación funcional</li><li>Testing funcional</li><li>Scrum · Jira · Confluence</li></ul></div>
+        <div><h3>Soporte y datos</h3><ul><li>SQL Server · PostgreSQL</li><li>IIS · instalaciones remotas</li><li>Excel avanzado</li><li>APIs REST · Swagger</li></ul></div>
+        <div><h3>Desarrollo</h3><ul><li>Java · Spring Boot</li><li>React · TypeScript</li><li>Git · GitHub</li><li>Desarrollo asistido por IA</li></ul></div>
+        <div><h3>Idiomas</h3><ul><li>Español nativo</li><li>Inglés: lectura técnica fluida</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto" class="contact">
+    <div class="wrap">
+      <p class="sec-title">// contacto</p>
+      <h2>Hablemos</h2>
+      <p class="muted">Busco posiciones de implementación, análisis funcional o soporte de aplicaciones. Buenos Aires · disponible para híbrido o remoto.</p>
+      <p><a href="mailto:barriosurielivan@gmail.com">barriosurielivan@gmail.com</a> · <a href="https://www.linkedin.com/in/urielivanbarrios" rel="noopener">LinkedIn</a> · <a href="https://github.com/UrielIvanBarrios" rel="noopener">GitHub</a></p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">© 2026 Uriel Ivan Barrios · sitio estático, sin trackers ni scripts de terceros</div>
+</footer>
+
+</body>
+</html>
