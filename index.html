@@ -63,6 +63,9 @@
   .stack{display:flex;flex-wrap:wrap;gap:6px;margin:18px 0 0}
   .chip{font-family:var(--mono);font-size:12px;background:#0b2a2a;color:var(--accent);padding:3px 9px;border-radius:6px}
   .ai-note{margin-top:18px;padding:14px 16px;border-left:3px solid var(--accent-2);background:rgba(125,211,252,.06);border-radius:0 8px 8px 0;font-size:15px}
+  .result{margin-top:18px;padding:14px 16px;border-left:3px solid var(--accent);background:rgba(94,234,212,.06);border-radius:0 8px 8px 0;font-size:15px}
+  .result h4{margin-bottom:4px}
+  .result p{margin:0}
   .links{margin-top:18px;display:flex;flex-wrap:wrap;gap:16px;font-family:var(--mono);font-size:13px}
 
   /* timeline */
@@ -171,6 +174,10 @@
           <span class="chip">React + TypeScript</span><span class="chip">Vite</span><span class="chip">MUI</span><span class="chip">TanStack Query</span>
           <span class="chip">Tests E2E · 330+ verificaciones</span>
         </div>
+        <div class="result">
+          <h4>Resultado</h4>
+          <p>El proceso real del club, llevado a un sistema completo: API REST, frontend y más de 330 verificaciones automatizadas que validan los flujos de punta a punta.</p>
+        </div>
         <div class="ai-note">
           <strong>Cómo usé IA.</strong> El relevamiento, el modelo de datos, las reglas de negocio y la primera parte del backend los hice yo. Para completar el backend (incluida la autenticación) y para el frontend trabajé con IA. Mi rol fue definir qué construir, revisar el código capa por capa (controller, service, repository) y validar el comportamiento con la suite de pruebas.
         </div>
@@ -218,18 +225,22 @@
         <div class="grid2">
           <div>
             <h4>Situación</h4>
-            <p>Las secretarias llevaban socios, actividades y pagos en planillas sueltas. Cada consulta implicaba buscar en varios archivos.</p>
+            <p>Socios, actividades y pagos se llevaban en planillas sueltas, con socios duplicados. El control de pagos se hacía a mano y había que repetirlo cada 5 días.</p>
           </div>
           <div>
             <h4>Qué hice</h4>
             <ul>
               <li>Relevé el circuito administrativo completo con quienes lo hacían a diario</li>
-              <li>Diseñé planillas Excel vinculadas entre sí, sin cambiar de herramienta</li>
-              <li>Les expliqué a las secretarias cómo usarlas en su trabajo diario</li>
+              <li>Depuré el padrón de socios hasta dejar un registro único</li>
+              <li>Automaticé el control de pagos con planillas vinculadas, sin cambiar de herramienta</li>
+              <li>Capacité al personal administrativo para usarlas en su trabajo diario</li>
             </ul>
           </div>
         </div>
-        <p class="muted" style="margin-top:16px">Ese relevamiento fue la base del sistema de gestión de arriba.</p>
+        <div class="result">
+          <h4>Resultado</h4>
+          <p>Se eliminó una verificación manual que se repetía cada 5 días, y el padrón quedó confiable. Ese relevamiento fue la base del sistema de gestión de arriba.</p>
+        </div>
       </article>
 
       <!-- CASO 3 -->
@@ -242,18 +253,22 @@
         <div class="grid2">
           <div>
             <h4>Contexto</h4>
-            <p>Clientes de ganadería, acopio, frigoríficos y consignatarios de hacienda, con circuitos de pedidos, cuenta corriente, facturación y consignación.</p>
+            <p>ERP desktop y web para ganadería, acopio, frigoríficos y consignatarios de hacienda. <strong>8 empresas cliente y 9 proyectos</strong>, con 3 a 4 en simultáneo.</p>
           </div>
           <div>
             <h4>Qué hice</h4>
             <ul>
-              <li>Relevamiento de procesos y elaboración de instructivos</li>
-              <li>Testing funcional en versiones desktop y web</li>
-              <li>Coordinación con desarrolladores y contacto con clientes</li>
-              <li>Documentación funcional de integraciones por API</li>
-              <li>Instalaciones remotas y troubleshooting de SQL Server / IIS</li>
+              <li>Relevamiento y documentación de pedidos, facturación, cuenta corriente, consignación y crédito: historias de usuario en Jira, especificaciones funcionales e instructivos</li>
+              <li>Especificación de integraciones por API REST: una billetera virtual para adelanto de cobros y el control de stock de un frigorífico</li>
+              <li>Corrección y ampliación de un modelo de ponderación de riesgo crediticio</li>
+              <li>QA funcional junto al equipo de desarrollo</li>
+              <li>Instalaciones remotas de servidores y resolución de incidencias en SQL Server e IIS a partir de logs</li>
             </ul>
           </div>
+        </div>
+        <div class="result">
+          <h4>Resultado</h4>
+          <p>Le propuse a un cliente reacio al cambio migrar a la versión web. La empresa negoció la propuesta y el cliente migró.</p>
         </div>
       </article>
     </div>
@@ -268,17 +283,22 @@
         <li>
           <div class="when">abr – jun 2026</div>
           <div><h3>Trainee Analista Funcional · <span class="org">Mantis</span></h3>
-          <p class="muted">ERP agropecuario. Relevamiento, instructivos, testing funcional, integración de APIs, soporte de implementación.</p></div>
+          <p class="muted">ERP agropecuario, 8 empresas cliente. Relevamiento y documentación, especificación de integraciones por API, QA funcional, soporte de implementación.</p></div>
         </li>
         <li>
           <div class="when">oct 2025 – abr 2026</div>
           <div><h3>Soporte Técnico Nivel 1 · <span class="org">Cat Technologies</span></h3>
-          <p class="muted">Diagnóstico y resolución de incidentes de usuarios.</p></div>
+          <p class="muted">Diagnóstico de incidentes de conectividad según procedimientos definidos, escalamiento a nivel 2 o visita técnica, atención y contención de clientes.</p></div>
         </li>
         <li>
           <div class="when">feb 2024 – oct 2025</div>
           <div><h3>Administrativo y mejora de procesos · <span class="org">Club Imperio Juniors</span></h3>
-          <p class="muted">Relevamiento de procesos administrativos, planillas vinculadas y acompañamiento a usuarias.</p></div>
+          <p class="muted">Depuración del padrón de socios, automatización del control de pagos con planillas vinculadas y capacitación del personal administrativo.</p></div>
+        </li>
+        <li>
+          <div class="when">2020 – 2023</div>
+          <div><h3>Atención al público · <span class="org">Gastronomía</span></h3>
+          <p class="muted">Buffet familiar y Sonna (buffet UCA): caja, atención al público y despacho de barra.</p></div>
         </li>
         <li>
           <div class="when">feb 2015 – ago 2019</div>
@@ -345,7 +365,7 @@
       <h2>Con qué trabajo</h2>
       <div class="skills">
         <div><h3>Análisis e implementación</h3><ul><li>Relevamiento de procesos</li><li>Requerimientos y reglas de negocio</li><li>Instructivos y documentación funcional</li><li>Testing funcional</li><li>Scrum · Jira · Confluence</li></ul></div>
-        <div><h3>Soporte y datos</h3><ul><li>SQL Server · PostgreSQL</li><li>IIS · instalaciones remotas</li><li>Excel avanzado</li><li>APIs REST · Swagger</li></ul></div>
+        <div><h3>Soporte y datos</h3><ul><li>SQL Server · PostgreSQL</li><li>IIS · instalaciones remotas</li><li>Excel avanzado</li><li>APIs REST · Postman · Swagger</li></ul></div>
         <div><h3>Desarrollo</h3><ul><li>Java · Spring Boot</li><li>React · TypeScript</li><li>Git · GitHub</li><li>Desarrollo asistido por IA</li></ul></div>
         <div><h3>Idiomas</h3><ul><li>Español nativo</li><li>Inglés: lectura técnica fluida</li></ul></div>
       </div>
@@ -357,7 +377,7 @@
     <div class="wrap">
       <p class="sec-title">// contacto</p>
       <h2>Hablemos</h2>
-      <p class="muted">Busco posiciones de implementación, análisis funcional o soporte de aplicaciones. Buenos Aires · disponible para híbrido o remoto.</p>
+      <p class="muted">Busco posiciones de implementación, análisis funcional o soporte de aplicaciones. Buenos Aires · disponibilidad inmediata · presencial, híbrido o remoto.</p>
       <p><a href="mailto:barriosurielivan@gmail.com">barriosurielivan@gmail.com</a> · <a href="https://www.linkedin.com/in/urielivanbarrios" rel="noopener">LinkedIn</a> · <a href="https://github.com/UrielIvanBarrios" rel="noopener">GitHub</a></p>
     </div>
   </section>
